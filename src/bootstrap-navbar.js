@@ -18,18 +18,20 @@ class BootstrapNavBar extends Component {
 			<nav className="navbar navbar-default">
 				<div className="container-fluid">
 					<div className="navbar-header">
-						<Link className="navbar-brand" to="/">WebSiteName</Link>
+						<Link className="navbar-brand" to="/">OpenVideoDB</Link>
 					</div>
 					<ul className="nav navbar-nav">
 						<li className="active"><Link to="/">Home</Link></li>
 						<li><Link to="/nowPlaying">Now Playing</Link></li>
 						<li><Link to="/topRated">Top Rated</Link></li>
-            <li>
-              <form onSubmit={this.handleSearchSubmit}>
-                <input type="text" placeholder="Search..." />
-                <button type="submit" className="btn btn-success">
-                  Search for Movie
-                </button>
+            <li className="col-lg-6 search-item">
+              <form className="input-group" onSubmit={this.handleSearchSubmit}>
+                <input className="form-control" type="text" placeholder="Search..." />
+                <span className="input-group-btn">
+                  <button type="submit" className="btn btn-success">
+                    Search for Movie
+                  </button>
+                </span>
               </form>
             </li>
 					</ul>

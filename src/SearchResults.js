@@ -12,27 +12,27 @@ class SearchResults extends Component {
 		this.state = {
 			moviePosters: []
 		}
-		this.componentDidMount = this.componentDidMount.bind(this);
 	}
 
 	componentDidMount() {
+
 		const url = Constants.baseUrl + 'search/movie?query=' + this.props.params.movieToSearchFor + Config.api_key;
 		$.getJSON(url, (searchData) =>{
-			this.setState = {
+			this.setState({
 				moviePosters: searchData.results
-			}
+			})
 		});
 	}
 
 	render() {
 		const postersArray = [];
 		this.state.moviePosters.map((poster, index) =>{
-			postersArray.push(<Poster poster={poster} key={index} />)
+			postersArray.push(<Poster poster={poster} key={index} />)		
 			return postersArray;
 		});
 
 		return(
-			<div className="col-sm-6 col-md-3 movie-poster">
+			<div className="col-sm-12">
 				<h1>{this.props.params.movieToSearchFor}</h1>
 				{postersArray}
 			</div>

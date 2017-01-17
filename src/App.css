@@ -49,3 +49,8 @@ input{
 .movie-poster img{
 	width: 100%;
 }
+
+.search-item{
+	width: 43vw;
+	margin-top: 8px;
+}
