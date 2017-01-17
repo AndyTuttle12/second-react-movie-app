@@ -7,6 +7,7 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router';
 import App from './App';
 import SingleMovie from './SingleMovie';
 import Home from './Home';
+import searchResults from './SearchResults';
 // styles
 import './index.css';
 
@@ -15,6 +16,7 @@ ReactDOM.render(
 		<Route path="/" component={App}>
 			<IndexRoute component={Home} />
 			<Route path="movie/:id" component={SingleMovie} />
+			<Route path="search/:movieToSearchFor" component={searchResults} />
 		</Route>
 	</Router>,
 	document.getElementById('root')
